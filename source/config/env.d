@@ -22,7 +22,11 @@ public final class EnvironmentConfig : ConfigBase
 
 	public override void load()
 	{
-		vars = environment.toAA();
+		auto env = environment.toAA();
+		foreach(e; env.byKeyValue())
+		{
+			vars["/" ~ e.key] = e.value;
+		}
 	}
 
 	public override immutable(string[string]) extract()
@@ -41,7 +45,11 @@ unittest
 		.addEnvironmentConfig();
 	config.build();
 
-	auto envPath = config.get!string("env/path");
+	auto keys = config.listKeys();
+	foreach(k; keys)
+		writeln(k);
+
+	auto envPath = config.get!string("/env/path");
 	assert(envPath != null);
 	writeln(envPath);
 }

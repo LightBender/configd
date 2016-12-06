@@ -1,6 +1,7 @@
 module stdx.config.base;
 
 import std.string;
+import std.algorithm.searching;
 
 public class ConfigException : Exception
 {
@@ -17,7 +18,14 @@ public abstract class ConfigBase
 
 	protected this(string pathRoot)
 	{
-		this._root = pathRoot.toLower();
+		if(!pathRoot.toLower().startsWith("/"))
+		{
+			this._root = "/" ~ pathRoot.toLower();
+		}
+		else
+		{
+			this._root = pathRoot.toLower();
+		}
 	}
 
 	public abstract void load();

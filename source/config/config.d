@@ -2,8 +2,10 @@ module stdx.config.config;
 
 import stdx.config.base;
 
-import std.string;
+import std.algorithm.searching;
+import std.array;
 import std.conv;
+import std.string;
 import std.traits;
 
 public class Configuration
@@ -32,7 +34,7 @@ public class Configuration
 
 			foreach(value; config.byKeyValue())
 			{
-				values[provider.root() ~ "/" ~ value.key.toLower()] = value.value;
+				values[provider.root() ~ value.key.toLower()] = value.value;
 			}
 		}
 
@@ -51,5 +53,36 @@ public class Configuration
 		{
 			throw new ConfigException("Unable to locate configuration path: " ~ lowerPath);
 		}
+	}
+
+	public string[] listKeys(string basePath = null)
+	{
+		if(basePath is null || basePath == "")
+		{
+			basePath = "/";
+		}
+		if(!basePath.startsWith("/"))
+		{
+			basePath = "/" ~ basePath;
+		}
+
+		auto keys = appender!(string[])();
+		int c = 0;
+		foreach(k; values.byKey())
+		{
+			if(k.startsWith(basePath) || k == basePath)
+			{
+				if(basePath == "/")
+				{
+					keys.put(k);
+				}
+				else
+				{
+					keys.put(k[basePath.length..$]);
+				}
+			}
+		}
+
+		return keys.data;
 	}
 }

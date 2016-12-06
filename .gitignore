@@ -3,6 +3,7 @@ docs.json
 __dummy.html
 __test*
 *.selections.json
+jsonConfigTest.json
 *.o
 *.a
 *.obj

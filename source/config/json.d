@@ -4,6 +4,8 @@ import stdx.config.base;
 import stdx.config.config;
 
 import std.conv;
+import std.file;
+import std.path;
 import std.stdio;
 import stdx.data.json;
 
@@ -21,7 +23,7 @@ public final class JsonConfig : ConfigBase
 	public this(string path, string root)
 	{
 		super(root);
-		this.path = path;
+		this.path = buildNormalizedPath(getcwd(), path);
 	}
 
 	public override void load()

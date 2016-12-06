@@ -44,7 +44,6 @@ unittest
 	import std.stdio : writeln;
 
 	auto mem = new MemoryConfig("memory");
-
 	mem.set("test", "Hello World");
 
 	auto config = new Configuration()

@@ -1,10 +1,10 @@
-# stdx.config
+# configd
 
-stdx.config is a D library that provides a unified storage and retrival API for application configuration information. The stdx.config API is extensible and can support any configuration source that can be mapped to key/value pair.
+configd is a D library that provides a unified storage and retrival API for application configuration information. The configd API is extensible and can support any configuration source that can be mapped to key/value pair.
 
 ## Configuration Providers
 
-stdx.config supports the following configuration providers:
+configd supports the following configuration providers:
 - EnvironmentConfig - Loads the applications envirvonment variables under the '/env/' path.
 - MemoryConfig - Allows the developer to specify configuration values in code.
 - JsonConfig - Loads configuration information from the specified JSON file.
@@ -13,7 +13,7 @@ stdx.config supports the following configuration providers:
 
 ```
 import std.stdio;
-import stdx.config;
+import configd;
 
 auto mem = new MemoryConfig("memory");
 mem.set("test", "Hello World");

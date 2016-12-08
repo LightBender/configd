@@ -1,4 +1,4 @@
-module stdx.config.base;
+module configd.base;
 
 import std.string;
 import std.algorithm.searching;

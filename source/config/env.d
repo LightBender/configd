@@ -1,7 +1,7 @@
-module stdx.config.env;
+module configd.env;
 
-import stdx.config.base;
-import stdx.config.config;
+import configd.base;
+import configd.config;
 
 import std.process;
 

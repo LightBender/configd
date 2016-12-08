@@ -1,6 +1,6 @@
-module stdx.config.config;
+module configd.config;
 
-import stdx.config.base;
+import configd.base;
 
 import std.algorithm.searching;
 import std.array;

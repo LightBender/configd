@@ -1,8 +1,8 @@
-module stdx.config.memory;
+module configd.memory;
 
 import std.string;
-import stdx.config.base;
-import stdx.config.config;
+import configd.base;
+import configd.config;
 
 public Configuration addMemoryConfig(Configuration config, MemoryConfig memory)
 {

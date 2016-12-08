@@ -1,7 +1,7 @@
-module stdx.config.json;
+module configd.json;
 
-import stdx.config.base;
-import stdx.config.config;
+import configd.base;
+import configd.config;
 
 import std.conv;
 import std.file;

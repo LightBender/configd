@@ -1,7 +1,7 @@
-module stdx.config;
+module configd;
 
-import stdx.config.base;
-import stdx.config.config;
-import stdx.config.env;
-import stdx.config.json;
-import stdx.config.memory;
+import configd.base;
+import configd.config;
+import configd.env;
+import configd.json;
+import configd.memory;

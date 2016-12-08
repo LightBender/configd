@@ -1,5 +1,5 @@
 {
-	"name": "stdxconfig",
+	"name": "configd",
 	"authors": [
 		"Adam Wilson"
 	],
@@ -7,7 +7,7 @@
 		"std_data_json": "~>0.18.2"
 	},
 	"targetType": "library",
-	"description": "Standard library for application configuration information.",
+	"description": "Library for working with application configuration information.",
 	"copyright": "Copyright © 2016, Adam Wilson",
 	"license": "BSL-1.0"
 }
